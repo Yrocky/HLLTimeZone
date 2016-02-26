@@ -16,12 +16,13 @@
 		8403360A1C7EF3760036AEE7 /* HLLTimeZoneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 840336091C7EF3760036AEE7 /* HLLTimeZoneTests.m */; };
 		840336151C7EF3760036AEE7 /* HLLTimeZoneUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 840336141C7EF3760036AEE7 /* HLLTimeZoneUITests.m */; };
 		840336391C8042E60036AEE7 /* HLLRegion.m in Sources */ = {isa = PBXBuildFile; fileRef = 840336341C8042E60036AEE7 /* HLLRegion.m */; };
-		8403363A1C8042E60036AEE7 /* HLLTimeZoneManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 840336361C8042E60036AEE7 /* HLLTimeZoneManager.m */; };
 		8403363B1C8042E60036AEE7 /* HLLTimeZoneWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 840336381C8042E60036AEE7 /* HLLTimeZoneWrapper.m */; };
 		840336401C8042ED0036AEE7 /* HLLSortObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8403363E1C8042ED0036AEE7 /* HLLSortObject.m */; };
 		840336431C804C530036AEE7 /* NSArray+Sort.m in Sources */ = {isa = PBXBuildFile; fileRef = 840336421C804C530036AEE7 /* NSArray+Sort.m */; };
 		8403364E1C805A440036AEE7 /* HLLSortA_ZDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 8403364A1C805A440036AEE7 /* HLLSortA_ZDataSource.m */; };
 		8403364F1C805A440036AEE7 /* HLLSortRegionsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 8403364D1C805A440036AEE7 /* HLLSortRegionsDataSource.m */; };
+		840336501C805AC70036AEE7 /* HLLTimeZoneManager.h in Sources */ = {isa = PBXBuildFile; fileRef = 840336351C8042E60036AEE7 /* HLLTimeZoneManager.h */; };
+		840336511C805AC70036AEE7 /* HLLTimeZoneManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 840336361C8042E60036AEE7 /* HLLTimeZoneManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -194,9 +195,9 @@
 		840336481C805A440036AEE7 /* DataSource */ = {
 			isa = PBXGroup;
 			children = (
+				8403364B1C805A440036AEE7 /* HLLSortProtocol.h */,
 				840336491C805A440036AEE7 /* HLLSortA_ZDataSource.h */,
 				8403364A1C805A440036AEE7 /* HLLSortA_ZDataSource.m */,
-				8403364B1C805A440036AEE7 /* HLLSortProtocol.h */,
 				8403364C1C805A440036AEE7 /* HLLSortRegionsDataSource.h */,
 				8403364D1C805A440036AEE7 /* HLLSortRegionsDataSource.m */,
 			);
@@ -333,10 +334,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				840336501C805AC70036AEE7 /* HLLTimeZoneManager.h in Sources */,
+				840336511C805AC70036AEE7 /* HLLTimeZoneManager.m in Sources */,
 				840336431C804C530036AEE7 /* NSArray+Sort.m in Sources */,
 				840335F71C7EF3760036AEE7 /* ViewController.m in Sources */,
 				840335F41C7EF3760036AEE7 /* AppDelegate.m in Sources */,
-				8403363A1C8042E60036AEE7 /* HLLTimeZoneManager.m in Sources */,
 				8403364E1C805A440036AEE7 /* HLLSortA_ZDataSource.m in Sources */,
 				840336401C8042ED0036AEE7 /* HLLSortObject.m in Sources */,
 				8403364F1C805A440036AEE7 /* HLLSortRegionsDataSource.m in Sources */,

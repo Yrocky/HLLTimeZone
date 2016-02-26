@@ -7,9 +7,9 @@
 //
 
 #import "HLLSortRegionsDataSource.h"
-#import "TimeZone/HLLTimeZoneManager.h"
-#import "TimeZone/HLLTimeZoneWrapper.h"
-#import "TimeZone/HLLRegion.h"
+#import "HLLTimeZoneManager.h"
+#import "HLLTimeZoneWrapper.h"
+#import "HLLRegion.h"
 
 @interface HLLSortRegionsDataSource ()
 
