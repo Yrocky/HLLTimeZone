@@ -11,5 +11,6 @@
 
 @interface HLLSortA_ZDataSource : NSObject<UITableViewDataSource>
 
+- (NSString *)cellIdentifier;
 
 @end

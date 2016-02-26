@@ -9,14 +9,21 @@
 #import "ViewController.h"
 #import "HLLRegion.h"
 #import "HLLTimeZoneWrapper.h"
-#import "HLLTimeZoneConfigure.h"
+#import "HLLTimeZoneManager.h"
+
+#import "HLLSortA_ZDataSource.h"
+#import "HLLSortObject.h"
+
+#define SortA_ZDataSource
 
 static NSString * const kTimeZoneCellIdentifier = @"timeZoneCellIdentifier";
 
 @interface ViewController ()<UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+
 @property (nonatomic) NSMutableDictionary * timeZoneDatas;
+@property (nonatomic) HLLSortA_ZDataSource * dataSource;
 @property (nonatomic) NSArray * regions;
 
 @end
@@ -26,57 +33,33 @@ static NSString * const kTimeZoneCellIdentifier = @"timeZoneCellIdentifier";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+#ifdef SortA_ZDataSource
+    
+    _dataSource = [[HLLSortA_ZDataSource alloc] init];
+    
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:[_dataSource cellIdentifier]];
+    
+    self.tableView.dataSource = _dataSource;
+
+#else
+    
     _timeZoneDatas = [NSMutableDictionary dictionary];
-
     
-    NSArray * allTimeZones = [[HLLTimeZoneConfigure shareTimeZoneConfigure] allTimeZones];
+    NSArray * allTimeZones = [[HLLTimeZoneManager shareTimeZoneManager] allTimeZones];
     
-    for (HLLTimeZoneWrapper * timeZone in allTimeZones) {
-        
-        if (timeZone.localeName != nil) {
-            
-            NSString * strFirLetter = [self _letterOrderWithTimeZoneLocaleName:timeZone.localeName];
-
-            NSAssert(strFirLetter != nil, @"'strFirLetter' Cant be nil");
-            if ([[_timeZoneDatas allKeys] containsObject:strFirLetter]) {
-                [[_timeZoneDatas objectForKey:strFirLetter] addObject:timeZone];
-            }else{
-                NSMutableArray * tempArray = [NSMutableArray array];
-                [tempArray addObject:timeZone];
-                [_timeZoneDatas setObject:tempArray forKey:strFirLetter];
-            }
-        }
-    }
+    HLLSortObject * sort = [[HLLSortObject alloc] init];
     
-    NSLog(@"data:%@",_timeZoneDatas);
+    NSDictionary * sortDictionary = [sort sortCollection:allTimeZones
+                        forEachObjectFromAToZWithKeyPath:@"localeName"];
     
-    NSArray * allkeys = [self.timeZoneDatas.allKeys sortedArrayUsingComparator:^NSComparisonResult(NSString * key1 ,NSString * key2) {
-        return [key1 localizedStandardCompare:key2];
-    }];
-    _regions = allkeys;
-}
-
-/**
- *  根据英文字母进行归类
- *
- *  @param localeName 时区的localeName
- *
- *  @return 时区的localeName的首字母
- */
-- (NSString *) _letterOrderWithTimeZoneLocaleName:(NSString *)localeName{
+    _timeZoneDatas = [NSMutableDictionary dictionaryWithDictionary:sortDictionary];
     
-    //判断首字符是否为字母，由于这里全部是字母，所以把汉字分支去掉了
-    NSString * regex = @"[A-Za-z]+";
-    NSPredicate * predicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",regex];
-    NSString * initialStr = [localeName length]?[localeName  substringToIndex:1]:@"";
+    NSArray * allKeys = [sort sortCollectioinAscendingOrder:self.timeZoneDatas.allKeys];
     
-    NSString * strFirLetter;
-    if ([predicate evaluateWithObject:initialStr])
-    {
-        //首字母大写
-        strFirLetter = [initialStr capitalizedString];
-    }
-    return strFirLetter;
+    _regions = allKeys;
+    
+    self.tableView = self;
+#endif
 }
 
 #pragma mark - UITableViewDataSource
@@ -104,5 +87,8 @@ static NSString * const kTimeZoneCellIdentifier = @"timeZoneCellIdentifier";
     cell.textLabel.text = [NSString stringWithFormat:@"%@",timeZoneWrapper.localeName ? : @" "];
     return cell;
 }
+- (nullable NSArray<NSString *> *)sectionIndexTitlesForTableView:(UITableView *)tableView{
 
+    return self.regions;
+}
 @end

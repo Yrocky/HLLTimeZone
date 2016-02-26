@@ -10,9 +10,9 @@
 
 @class HLLTimeZoneWrapper,HLLRegion;
 
-@interface HLLTimeZoneConfigure : NSObject
+@interface HLLTimeZoneManager : NSObject
 
-+ (instancetype) shareTimeZoneConfigure;
++ (instancetype) shareTimeZoneManager;
 
 /**
  *  使用HLLRegion的类方法获取已知时区列表

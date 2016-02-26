@@ -6,16 +6,16 @@
 //  Copyright © 2016年 HLL. All rights reserved.
 //
 
-#import "HLLTimeZoneConfigure.h"
+#import "HLLTimeZoneManager.h"
 #import "HLLTimeZoneWrapper.h"
 #import "HLLRegion.h"
 
 
 #define SortNameUseThisSimpleAPI
 
-@implementation HLLTimeZoneConfigure
+@implementation HLLTimeZoneManager
 
-static HLLTimeZoneConfigure *_instance;
+static HLLTimeZoneManager *_instance;
 static NSMutableArray * knownRegions = nil;
 static NSMutableArray * allTimeZones = nil;
 
@@ -30,7 +30,7 @@ static NSMutableArray * allTimeZones = nil;
     return _instance;
 }
 
-+ (instancetype)shareTimeZoneConfigure{
++ (instancetype) shareTimeZoneManager{
     
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{

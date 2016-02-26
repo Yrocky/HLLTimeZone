@@ -7,20 +7,61 @@
 //
 
 #import "HLLSortA_ZDataSource.h"
+#import "TimeZone/HLLTimeZoneManager.h"
+#import "TimeZone/HLLTimeZoneWrapper.h"
+#import "TimeZone/HLLRegion.h"
+
+
+@interface HLLSortA_ZDataSource ()
+
+@property (nonatomic) NSArray * regions;
+
+@end
 
 @implementation HLLSortA_ZDataSource
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        
+        NSArray * knownRegions = [[HLLTimeZoneManager shareTimeZoneManager] knownRegions];
+        
+        NSLog(@"%@",knownRegions);
+        
+        _regions = knownRegions;
+    }
+    return self;
+}
+
+- (NSString *)cellIdentifier{
+
+    return @"SortA_ZDataSource";
+}
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
 
-    return 2;
+    HLLRegion * region = self.regions[section];
+    return [region.timeZoneWrappers count];
 }
 
 - (NSInteger) numberOfSectionsInTableView:(UITableView *)tableView{
 
-    return 1;
+    return [self.regions count];
+}
+- (NSString *) tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+
+    HLLRegion * region = self.regions[section];
+    return region.name;
 }
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
 
-    return nil;
+    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:[self cellIdentifier] forIndexPath:indexPath];
+    
+    HLLRegion * region = self.regions[indexPath.section];
+    HLLTimeZoneWrapper * timeZoneWrapper = region.timeZoneWrappers[indexPath.row];
+    
+    cell.textLabel.text = [NSString stringWithFormat:@"%@",timeZoneWrapper.localeName ? : @" "];
+    
+    return cell;
 }
 @end

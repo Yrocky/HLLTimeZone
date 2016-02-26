@@ -8,6 +8,8 @@
 
 #import "HLLTimeZoneWrapper.h"
 
+#define TestOtherSituation
+
 @implementation HLLTimeZoneWrapper
 
 - (instancetype)initWithTimeZone:(NSTimeZone *)timeZone fullTimeZoneNames:(NSArray *)fullTimeZoneNames{
@@ -24,6 +26,20 @@
         if (fullTimeZoneNames.count == 3) {
             name = [NSString stringWithFormat:@"%@ (%@)",fullTimeZoneNames[1],fullTimeZoneNames[2]];
         }
+#ifdef TestOtherSituation
+        if ([name  isEqual: @"Abidjan"]) {
+            name = @"100";
+        }
+        if ([name isEqualToString:@"Aden"]) {
+            name = @"安阳";
+        }
+        if ([name isEqualToString:@"Adak"]) {
+            name = @"😂";
+        }
+        if ([name isEqualToString:@"Accra"]) {
+            name = @"北京";
+        }
+#endif
         _localeName = [name stringByReplacingOccurrencesOfString:@"_" withString:@" "];
     }
     return self;
