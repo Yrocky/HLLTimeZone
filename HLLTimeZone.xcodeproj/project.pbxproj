@@ -15,12 +15,13 @@
 		840335FF1C7EF3760036AEE7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 840335FD1C7EF3760036AEE7 /* LaunchScreen.storyboard */; };
 		8403360A1C7EF3760036AEE7 /* HLLTimeZoneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 840336091C7EF3760036AEE7 /* HLLTimeZoneTests.m */; };
 		840336151C7EF3760036AEE7 /* HLLTimeZoneUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 840336141C7EF3760036AEE7 /* HLLTimeZoneUITests.m */; };
-		8403362A1C801E680036AEE7 /* HLLSortA_ZDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 840336291C801E680036AEE7 /* HLLSortA_ZDataSource.m */; };
 		840336391C8042E60036AEE7 /* HLLRegion.m in Sources */ = {isa = PBXBuildFile; fileRef = 840336341C8042E60036AEE7 /* HLLRegion.m */; };
 		8403363A1C8042E60036AEE7 /* HLLTimeZoneManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 840336361C8042E60036AEE7 /* HLLTimeZoneManager.m */; };
 		8403363B1C8042E60036AEE7 /* HLLTimeZoneWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 840336381C8042E60036AEE7 /* HLLTimeZoneWrapper.m */; };
 		840336401C8042ED0036AEE7 /* HLLSortObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8403363E1C8042ED0036AEE7 /* HLLSortObject.m */; };
 		840336431C804C530036AEE7 /* NSArray+Sort.m in Sources */ = {isa = PBXBuildFile; fileRef = 840336421C804C530036AEE7 /* NSArray+Sort.m */; };
+		8403364E1C805A440036AEE7 /* HLLSortA_ZDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 8403364A1C805A440036AEE7 /* HLLSortA_ZDataSource.m */; };
+		8403364F1C805A440036AEE7 /* HLLSortRegionsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 8403364D1C805A440036AEE7 /* HLLSortRegionsDataSource.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,8 +58,6 @@
 		840336101C7EF3760036AEE7 /* HLLTimeZoneUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HLLTimeZoneUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		840336141C7EF3760036AEE7 /* HLLTimeZoneUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HLLTimeZoneUITests.m; sourceTree = "<group>"; };
 		840336161C7EF3760036AEE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		840336281C801E680036AEE7 /* HLLSortA_ZDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLLSortA_ZDataSource.h; sourceTree = "<group>"; };
-		840336291C801E680036AEE7 /* HLLSortA_ZDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLLSortA_ZDataSource.m; sourceTree = "<group>"; };
 		840336331C8042E60036AEE7 /* HLLRegion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLLRegion.h; sourceTree = "<group>"; };
 		840336341C8042E60036AEE7 /* HLLRegion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLLRegion.m; sourceTree = "<group>"; };
 		840336351C8042E60036AEE7 /* HLLTimeZoneManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLLTimeZoneManager.h; sourceTree = "<group>"; };
@@ -70,6 +69,11 @@
 		8403363F1C8042ED0036AEE7 /* Tool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tool.h; sourceTree = "<group>"; };
 		840336411C804C530036AEE7 /* NSArray+Sort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Sort.h"; sourceTree = "<group>"; };
 		840336421C804C530036AEE7 /* NSArray+Sort.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Sort.m"; sourceTree = "<group>"; };
+		840336491C805A440036AEE7 /* HLLSortA_ZDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLLSortA_ZDataSource.h; sourceTree = "<group>"; };
+		8403364A1C805A440036AEE7 /* HLLSortA_ZDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLLSortA_ZDataSource.m; sourceTree = "<group>"; };
+		8403364B1C805A440036AEE7 /* HLLSortProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLLSortProtocol.h; sourceTree = "<group>"; };
+		8403364C1C805A440036AEE7 /* HLLSortRegionsDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLLSortRegionsDataSource.h; sourceTree = "<group>"; };
+		8403364D1C805A440036AEE7 /* HLLSortRegionsDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLLSortRegionsDataSource.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,8 +128,7 @@
 				840335F31C7EF3760036AEE7 /* AppDelegate.m */,
 				840335F51C7EF3760036AEE7 /* ViewController.h */,
 				840335F61C7EF3760036AEE7 /* ViewController.m */,
-				840336281C801E680036AEE7 /* HLLSortA_ZDataSource.h */,
-				840336291C801E680036AEE7 /* HLLSortA_ZDataSource.m */,
+				840336481C805A440036AEE7 /* DataSource */,
 				8403363C1C8042ED0036AEE7 /* Sort */,
 				840336321C8042E60036AEE7 /* TimeZone */,
 				840335F81C7EF3760036AEE7 /* Main.storyboard */,
@@ -186,6 +189,18 @@
 				8403363F1C8042ED0036AEE7 /* Tool.h */,
 			);
 			path = Sort;
+			sourceTree = "<group>";
+		};
+		840336481C805A440036AEE7 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				840336491C805A440036AEE7 /* HLLSortA_ZDataSource.h */,
+				8403364A1C805A440036AEE7 /* HLLSortA_ZDataSource.m */,
+				8403364B1C805A440036AEE7 /* HLLSortProtocol.h */,
+				8403364C1C805A440036AEE7 /* HLLSortRegionsDataSource.h */,
+				8403364D1C805A440036AEE7 /* HLLSortRegionsDataSource.m */,
+			);
+			path = DataSource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -322,8 +337,9 @@
 				840335F71C7EF3760036AEE7 /* ViewController.m in Sources */,
 				840335F41C7EF3760036AEE7 /* AppDelegate.m in Sources */,
 				8403363A1C8042E60036AEE7 /* HLLTimeZoneManager.m in Sources */,
-				8403362A1C801E680036AEE7 /* HLLSortA_ZDataSource.m in Sources */,
+				8403364E1C805A440036AEE7 /* HLLSortA_ZDataSource.m in Sources */,
 				840336401C8042ED0036AEE7 /* HLLSortObject.m in Sources */,
+				8403364F1C805A440036AEE7 /* HLLSortRegionsDataSource.m in Sources */,
 				8403363B1C8042E60036AEE7 /* HLLTimeZoneWrapper.m in Sources */,
 				840336391C8042E60036AEE7 /* HLLRegion.m in Sources */,
 				840335F11C7EF3760036AEE7 /* main.m in Sources */,

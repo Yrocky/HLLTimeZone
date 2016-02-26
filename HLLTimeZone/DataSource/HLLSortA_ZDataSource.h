@@ -8,9 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "HLLSortProtocol.h"
 
-@interface HLLSortA_ZDataSource : NSObject<UITableViewDataSource>
 
-- (NSString *)cellIdentifier;
+@interface HLLSortA_ZDataSource : NSObject<UITableViewDataSource,HLLSortProtocol>
 
 @end

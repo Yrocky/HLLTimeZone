@@ -11,20 +11,17 @@
 #import "HLLTimeZoneWrapper.h"
 #import "HLLTimeZoneManager.h"
 
+#import "HLLSortRegionsDataSource.h"
 #import "HLLSortA_ZDataSource.h"
 #import "HLLSortObject.h"
 
 #define SortA_ZDataSource
 
-static NSString * const kTimeZoneCellIdentifier = @"timeZoneCellIdentifier";
-
-@interface ViewController ()<UITableViewDataSource>
+@interface ViewController ()
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
-@property (nonatomic) NSMutableDictionary * timeZoneDatas;
-@property (nonatomic) HLLSortA_ZDataSource * dataSource;
-@property (nonatomic) NSArray * regions;
+@property (nonatomic ,strong) id<UITableViewDataSource,HLLSortProtocol> dataSource;
 
 @end
 
@@ -35,60 +32,28 @@ static NSString * const kTimeZoneCellIdentifier = @"timeZoneCellIdentifier";
     
 #ifdef SortA_ZDataSource
     
-    _dataSource = [[HLLSortA_ZDataSource alloc] init];
+    HLLSortA_ZDataSource * _A_ZDataSource = [[HLLSortA_ZDataSource alloc] init];
     
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:[_dataSource cellIdentifier]];
-    
-    self.tableView.dataSource = _dataSource;
-
+    [self setupTableViewDataSource:_A_ZDataSource];
 #else
     
-    _timeZoneDatas = [NSMutableDictionary dictionary];
+    HLLSortRegionsDataSource * _regionDataSource  = [[HLLSortRegionsDataSource alloc] init];
     
-    NSArray * allTimeZones = [[HLLTimeZoneManager shareTimeZoneManager] allTimeZones];
-    
-    HLLSortObject * sort = [[HLLSortObject alloc] init];
-    
-    NSDictionary * sortDictionary = [sort sortCollection:allTimeZones
-                        forEachObjectFromAToZWithKeyPath:@"localeName"];
-    
-    _timeZoneDatas = [NSMutableDictionary dictionaryWithDictionary:sortDictionary];
-    
-    NSArray * allKeys = [sort sortCollectioinAscendingOrder:self.timeZoneDatas.allKeys];
-    
-    _regions = allKeys;
-    
-    self.tableView = self;
+    [self setupTableViewDataSource:_regionDataSource];
+
 #endif
 }
 
-#pragma mark - UITableViewDataSource
-- (NSInteger) numberOfSectionsInTableView:(UITableView *)tableView{
+- (void) setupTableViewDataSource:(id<UITableViewDataSource,HLLSortProtocol>)dataSource{
 
-    return self.regions.count;
-}
-- (NSString *) tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    _dataSource = dataSource;
     
-    return self.regions[section];
-}
-- (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    self.title = [dataSource name];
     
-    NSArray * timeZones = [self.timeZoneDatas objectForKey:self.regions[section]];
-    return timeZones.count;
-}
-
-- (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-
-    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:kTimeZoneCellIdentifier forIndexPath:indexPath];
+    self.navigationItem.title = [dataSource navigationBarName];
     
-    NSArray * timeZones = [self.timeZoneDatas objectForKey:self.regions[indexPath.section]];
-    HLLTimeZoneWrapper * timeZoneWrapper = timeZones[indexPath.row];
-
-    cell.textLabel.text = [NSString stringWithFormat:@"%@",timeZoneWrapper.localeName ? : @" "];
-    return cell;
-}
-- (nullable NSArray<NSString *> *)sectionIndexTitlesForTableView:(UITableView *)tableView{
-
-    return self.regions;
+    self.tableView.dataSource = dataSource;
+    
+    [self.tableView registerClass:[dataSource cellClass] forCellReuseIdentifier:[dataSource cellIdentifier]];
 }
 @end

@@ -1,24 +1,23 @@
 //
-//  HLLSortA_ZDataSource.m
+//  HLLSortRegionsDataSource.m
 //  HLLTimeZone
 //
 //  Created by admin on 16/2/26.
 //  Copyright © 2016年 HLL. All rights reserved.
 //
 
-#import "HLLSortA_ZDataSource.h"
+#import "HLLSortRegionsDataSource.h"
 #import "TimeZone/HLLTimeZoneManager.h"
 #import "TimeZone/HLLTimeZoneWrapper.h"
 #import "TimeZone/HLLRegion.h"
 
-
-@interface HLLSortA_ZDataSource ()
+@interface HLLSortRegionsDataSource ()
 
 @property (nonatomic) NSArray * regions;
 
 @end
 
-@implementation HLLSortA_ZDataSource
+@implementation HLLSortRegionsDataSource
 
 - (instancetype)init
 {
@@ -27,34 +26,58 @@
         
         NSArray * knownRegions = [[HLLTimeZoneManager shareTimeZoneManager] knownRegions];
         
-        NSLog(@"%@",knownRegions);
-        
         _regions = knownRegions;
     }
     return self;
 }
 
+#pragma mark - HLLSortProtocol
+
 - (NSString *)cellIdentifier{
-
-    return @"SortA_ZDataSource";
+    
+    return @"SortRegionsDataSource";
 }
-- (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
 
+- (NSString *)name{
+    
+    return @"Regions";
+}
+- (NSString *) navigationBarName{
+    
+    return @"Sort By Regions";
+}
+- (UITableViewStyle) tableViewStyle{
+    
+    return UITableViewStyleGrouped;
+}
+
+- (id)elementForIndexPath:(NSIndexPath *)indexPath{
+    
+    return nil;
+}
+- (Class)cellClass{
+    
+    return [UITableViewCell class];
+}
+#pragma mark - UITableViewDataSource
+
+- (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    
     HLLRegion * region = self.regions[section];
     return [region.timeZoneWrappers count];
 }
 
 - (NSInteger) numberOfSectionsInTableView:(UITableView *)tableView{
-
+    
     return [self.regions count];
 }
 - (NSString *) tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
-
+    
     HLLRegion * region = self.regions[section];
     return region.name;
 }
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-
+    
     UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:[self cellIdentifier] forIndexPath:indexPath];
     
     HLLRegion * region = self.regions[indexPath.section];
@@ -64,4 +87,5 @@
     
     return cell;
 }
+
 @end
