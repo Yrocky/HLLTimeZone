@@ -15,6 +15,8 @@
 		840335FF1C7EF3760036AEE7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 840335FD1C7EF3760036AEE7 /* LaunchScreen.storyboard */; };
 		8403360A1C7EF3760036AEE7 /* HLLTimeZoneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 840336091C7EF3760036AEE7 /* HLLTimeZoneTests.m */; };
 		840336151C7EF3760036AEE7 /* HLLTimeZoneUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 840336141C7EF3760036AEE7 /* HLLTimeZoneUITests.m */; };
+		840336241C7FE3390036AEE7 /* HLLRegion.m in Sources */ = {isa = PBXBuildFile; fileRef = 840336231C7FE3390036AEE7 /* HLLRegion.m */; };
+		840336271C7FE8E80036AEE7 /* HLLTimeZoneWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 840336261C7FE8E80036AEE7 /* HLLTimeZoneWrapper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,10 @@
 		840336101C7EF3760036AEE7 /* HLLTimeZoneUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HLLTimeZoneUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		840336141C7EF3760036AEE7 /* HLLTimeZoneUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HLLTimeZoneUITests.m; sourceTree = "<group>"; };
 		840336161C7EF3760036AEE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		840336221C7FE3390036AEE7 /* HLLRegion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLLRegion.h; sourceTree = "<group>"; };
+		840336231C7FE3390036AEE7 /* HLLRegion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLLRegion.m; sourceTree = "<group>"; };
+		840336251C7FE8E80036AEE7 /* HLLTimeZoneWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLLTimeZoneWrapper.h; sourceTree = "<group>"; };
+		840336261C7FE8E80036AEE7 /* HLLTimeZoneWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLLTimeZoneWrapper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +111,10 @@
 				840335F31C7EF3760036AEE7 /* AppDelegate.m */,
 				840335F51C7EF3760036AEE7 /* ViewController.h */,
 				840335F61C7EF3760036AEE7 /* ViewController.m */,
+				840336221C7FE3390036AEE7 /* HLLRegion.h */,
+				840336231C7FE3390036AEE7 /* HLLRegion.m */,
+				840336251C7FE8E80036AEE7 /* HLLTimeZoneWrapper.h */,
+				840336261C7FE8E80036AEE7 /* HLLTimeZoneWrapper.m */,
 				840335F81C7EF3760036AEE7 /* Main.storyboard */,
 				840335FB1C7EF3760036AEE7 /* Assets.xcassets */,
 				840335FD1C7EF3760036AEE7 /* LaunchScreen.storyboard */,
@@ -272,7 +282,9 @@
 			files = (
 				840335F71C7EF3760036AEE7 /* ViewController.m in Sources */,
 				840335F41C7EF3760036AEE7 /* AppDelegate.m in Sources */,
+				840336241C7FE3390036AEE7 /* HLLRegion.m in Sources */,
 				840335F11C7EF3760036AEE7 /* main.m in Sources */,
+				840336271C7FE8E80036AEE7 /* HLLTimeZoneWrapper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
