@@ -17,6 +17,9 @@
 		840336151C7EF3760036AEE7 /* HLLTimeZoneUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 840336141C7EF3760036AEE7 /* HLLTimeZoneUITests.m */; };
 		840336241C7FE3390036AEE7 /* HLLRegion.m in Sources */ = {isa = PBXBuildFile; fileRef = 840336231C7FE3390036AEE7 /* HLLRegion.m */; };
 		840336271C7FE8E80036AEE7 /* HLLTimeZoneWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 840336261C7FE8E80036AEE7 /* HLLTimeZoneWrapper.m */; };
+		8403362A1C801E680036AEE7 /* HLLSortA_ZDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 840336291C801E680036AEE7 /* HLLSortA_ZDataSource.m */; };
+		8403362D1C801EBA0036AEE7 /* HLLTimeZoneConfigure.m in Sources */ = {isa = PBXBuildFile; fileRef = 8403362C1C801EBA0036AEE7 /* HLLTimeZoneConfigure.m */; };
+		840336311C802C620036AEE7 /* HLLSortObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 840336301C802C620036AEE7 /* HLLSortObject.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +60,12 @@
 		840336231C7FE3390036AEE7 /* HLLRegion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLLRegion.m; sourceTree = "<group>"; };
 		840336251C7FE8E80036AEE7 /* HLLTimeZoneWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLLTimeZoneWrapper.h; sourceTree = "<group>"; };
 		840336261C7FE8E80036AEE7 /* HLLTimeZoneWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLLTimeZoneWrapper.m; sourceTree = "<group>"; };
+		840336281C801E680036AEE7 /* HLLSortA_ZDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLLSortA_ZDataSource.h; sourceTree = "<group>"; };
+		840336291C801E680036AEE7 /* HLLSortA_ZDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLLSortA_ZDataSource.m; sourceTree = "<group>"; };
+		8403362B1C801EBA0036AEE7 /* HLLTimeZoneConfigure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLLTimeZoneConfigure.h; sourceTree = "<group>"; };
+		8403362C1C801EBA0036AEE7 /* HLLTimeZoneConfigure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLLTimeZoneConfigure.m; sourceTree = "<group>"; };
+		8403362F1C802C620036AEE7 /* HLLSortObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLLSortObject.h; sourceTree = "<group>"; };
+		840336301C802C620036AEE7 /* HLLSortObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLLSortObject.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,10 +120,11 @@
 				840335F31C7EF3760036AEE7 /* AppDelegate.m */,
 				840335F51C7EF3760036AEE7 /* ViewController.h */,
 				840335F61C7EF3760036AEE7 /* ViewController.m */,
-				840336221C7FE3390036AEE7 /* HLLRegion.h */,
-				840336231C7FE3390036AEE7 /* HLLRegion.m */,
-				840336251C7FE8E80036AEE7 /* HLLTimeZoneWrapper.h */,
-				840336261C7FE8E80036AEE7 /* HLLTimeZoneWrapper.m */,
+				840336281C801E680036AEE7 /* HLLSortA_ZDataSource.h */,
+				840336291C801E680036AEE7 /* HLLSortA_ZDataSource.m */,
+				8403362F1C802C620036AEE7 /* HLLSortObject.h */,
+				840336301C802C620036AEE7 /* HLLSortObject.m */,
+				8403362E1C802C490036AEE7 /* TImeZone */,
 				840335F81C7EF3760036AEE7 /* Main.storyboard */,
 				840335FB1C7EF3760036AEE7 /* Assets.xcassets */,
 				840335FD1C7EF3760036AEE7 /* LaunchScreen.storyboard */,
@@ -148,6 +158,19 @@
 				840336161C7EF3760036AEE7 /* Info.plist */,
 			);
 			path = HLLTimeZoneUITests;
+			sourceTree = "<group>";
+		};
+		8403362E1C802C490036AEE7 /* TImeZone */ = {
+			isa = PBXGroup;
+			children = (
+				8403362B1C801EBA0036AEE7 /* HLLTimeZoneConfigure.h */,
+				8403362C1C801EBA0036AEE7 /* HLLTimeZoneConfigure.m */,
+				840336221C7FE3390036AEE7 /* HLLRegion.h */,
+				840336231C7FE3390036AEE7 /* HLLRegion.m */,
+				840336251C7FE8E80036AEE7 /* HLLTimeZoneWrapper.h */,
+				840336261C7FE8E80036AEE7 /* HLLTimeZoneWrapper.m */,
+			);
+			name = TImeZone;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -281,7 +304,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				840335F71C7EF3760036AEE7 /* ViewController.m in Sources */,
+				840336311C802C620036AEE7 /* HLLSortObject.m in Sources */,
 				840335F41C7EF3760036AEE7 /* AppDelegate.m in Sources */,
+				8403362A1C801E680036AEE7 /* HLLSortA_ZDataSource.m in Sources */,
+				8403362D1C801EBA0036AEE7 /* HLLTimeZoneConfigure.m in Sources */,
 				840336241C7FE3390036AEE7 /* HLLRegion.m in Sources */,
 				840335F11C7EF3760036AEE7 /* main.m in Sources */,
 				840336271C7FE8E80036AEE7 /* HLLTimeZoneWrapper.m in Sources */,
