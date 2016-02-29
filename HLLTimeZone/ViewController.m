@@ -14,6 +14,7 @@
 #import "HLLSortRegionsDataSource.h"
 #import "HLLSortA_ZDataSource.h"
 #import "HLLSortObject.h"
+#import "HLLSortLocalizedIndexedCollationDataSource.h"
 
 #define SortA_ZDataSource
 
@@ -30,11 +31,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    HLLSortLocalizedIndexedCollationDataSource * locaitonIndexCollectionDataSource = [[HLLSortLocalizedIndexedCollationDataSource alloc] init];
+
+    [self setupTableViewDataSource:locaitonIndexCollectionDataSource];
+    
 #ifdef SortA_ZDataSource
     
-    HLLSortA_ZDataSource * _A_ZDataSource = [[HLLSortA_ZDataSource alloc] init];
-    
-    [self setupTableViewDataSource:_A_ZDataSource];
+//    HLLSortA_ZDataSource * _A_ZDataSource = [[HLLSortA_ZDataSource alloc] init];
+//    
+//    [self setupTableViewDataSource:_A_ZDataSource];
 #else
     
     HLLSortRegionsDataSource * _regionDataSource  = [[HLLSortRegionsDataSource alloc] init];

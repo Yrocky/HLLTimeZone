@@ -32,11 +32,11 @@
 - (NSDictionary *) sortCollection:(NSArray *)collection forEachObjectFromAToZWithKeyPath:(NSString *)keyPath;
 
 /**
- *  对给定的数组中的字符串对象按照给定的属性进行A-Z归类
+ *  对给定的数组中的字符串进行A-Z归类
  *
  *  @param collection 装有要排序字符串的数组
  *
- *  @return 排序结果：@{@"A":@[obj1A、obj2A...]...@"Z":@[obj1Z、obj2Z]}
+ *  @return 排序结果：@{@"A":@[string1A、string2A...]...@"Z":@[string1Z、string2Z]}
  */
 - (NSDictionary *) sortCollectionForEachObjectFromAToZ:(NSArray <NSString *>*)collection;
 

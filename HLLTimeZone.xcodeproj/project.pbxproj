@@ -23,6 +23,7 @@
 		8403364F1C805A440036AEE7 /* HLLSortRegionsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 8403364D1C805A440036AEE7 /* HLLSortRegionsDataSource.m */; };
 		840336501C805AC70036AEE7 /* HLLTimeZoneManager.h in Sources */ = {isa = PBXBuildFile; fileRef = 840336351C8042E60036AEE7 /* HLLTimeZoneManager.h */; };
 		840336511C805AC70036AEE7 /* HLLTimeZoneManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 840336361C8042E60036AEE7 /* HLLTimeZoneManager.m */; };
+		840336541C83D6780036AEE7 /* HLLSortLocalizedIndexedCollationDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 840336531C83D6780036AEE7 /* HLLSortLocalizedIndexedCollationDataSource.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,8 @@
 		8403364B1C805A440036AEE7 /* HLLSortProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLLSortProtocol.h; sourceTree = "<group>"; };
 		8403364C1C805A440036AEE7 /* HLLSortRegionsDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLLSortRegionsDataSource.h; sourceTree = "<group>"; };
 		8403364D1C805A440036AEE7 /* HLLSortRegionsDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLLSortRegionsDataSource.m; sourceTree = "<group>"; };
+		840336521C83D6780036AEE7 /* HLLSortLocalizedIndexedCollationDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLLSortLocalizedIndexedCollationDataSource.h; sourceTree = "<group>"; };
+		840336531C83D6780036AEE7 /* HLLSortLocalizedIndexedCollationDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLLSortLocalizedIndexedCollationDataSource.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,10 +173,10 @@
 		840336321C8042E60036AEE7 /* TimeZone */ = {
 			isa = PBXGroup;
 			children = (
-				840336331C8042E60036AEE7 /* HLLRegion.h */,
-				840336341C8042E60036AEE7 /* HLLRegion.m */,
 				840336351C8042E60036AEE7 /* HLLTimeZoneManager.h */,
 				840336361C8042E60036AEE7 /* HLLTimeZoneManager.m */,
+				840336331C8042E60036AEE7 /* HLLRegion.h */,
+				840336341C8042E60036AEE7 /* HLLRegion.m */,
 				840336371C8042E60036AEE7 /* HLLTimeZoneWrapper.h */,
 				840336381C8042E60036AEE7 /* HLLTimeZoneWrapper.m */,
 			);
@@ -200,6 +203,8 @@
 				8403364A1C805A440036AEE7 /* HLLSortA_ZDataSource.m */,
 				8403364C1C805A440036AEE7 /* HLLSortRegionsDataSource.h */,
 				8403364D1C805A440036AEE7 /* HLLSortRegionsDataSource.m */,
+				840336521C83D6780036AEE7 /* HLLSortLocalizedIndexedCollationDataSource.h */,
+				840336531C83D6780036AEE7 /* HLLSortLocalizedIndexedCollationDataSource.m */,
 			);
 			path = DataSource;
 			sourceTree = "<group>";
@@ -345,6 +350,7 @@
 				8403363B1C8042E60036AEE7 /* HLLTimeZoneWrapper.m in Sources */,
 				840336391C8042E60036AEE7 /* HLLRegion.m in Sources */,
 				840335F11C7EF3760036AEE7 /* main.m in Sources */,
+				840336541C83D6780036AEE7 /* HLLSortLocalizedIndexedCollationDataSource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
