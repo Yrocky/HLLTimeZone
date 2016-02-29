@@ -19,6 +19,9 @@
         _timeZone = timeZone;
         // fullTimeZoneNames中有特殊的，只有一个元素，比如GMT
         NSString * name = nil;
+        if (fullTimeZoneNames.count == 1) {
+            name = @"*GMT*";
+        }
         if (fullTimeZoneNames.count == 2) {
             name = fullTimeZoneNames[1];
         }
@@ -38,6 +41,9 @@
         }
         if ([name isEqualToString:@"Accra"]) {
             name = @"北京";
+        }
+        if ([name isEqualToString:@"GMT"]) {
+            name = @"GMT";
         }
 #endif
         _localeName = [name stringByReplacingOccurrencesOfString:@"_" withString:@" "];

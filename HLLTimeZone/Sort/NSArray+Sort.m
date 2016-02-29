@@ -75,6 +75,7 @@ char pinyinFirstLeter_category(unsigned short hanzi)
             NSString * strFirLetter = [self firstLetterOrderWithSortString:value];
             
             NSAssert(strFirLetter != nil, @"'strFirLetter' Cant be nil");
+            
             if ([[dictionary allKeys] containsObject:strFirLetter]) {
                 [[dictionary objectForKey:strFirLetter] addObject:obj];
             }else{
@@ -99,6 +100,7 @@ char pinyinFirstLeter_category(unsigned short hanzi)
             NSString * strFirLetter = [self firstLetterOrderWithSortString:obj];
             
             NSAssert(strFirLetter != nil, @"'strFirLetter' Cant be nil");
+            
             if ([[dictionary allKeys] containsObject:strFirLetter]) {
                 [[dictionary objectForKey:strFirLetter] addObject:obj];
             }else{

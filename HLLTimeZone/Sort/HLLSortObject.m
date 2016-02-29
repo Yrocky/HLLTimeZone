@@ -53,8 +53,11 @@ char pinyinFirstLeter(unsigned short hanzi)
     BOOL hasKeyPath = NO;
     
     for (int index = 0; index < outCount; index ++) {
+        
         objc_property_t property = propertys[index];
+        
         NSString * propertyKey = [NSString stringWithUTF8String:property_getName(property)];
+        
         if ([keyPath isEqualToString:propertyKey]) {
             hasKeyPath = YES;
         }
