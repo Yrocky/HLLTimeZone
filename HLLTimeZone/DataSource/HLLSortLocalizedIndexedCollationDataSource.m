@@ -105,7 +105,9 @@
 // 如果使用UILocationIndexCollection，可以使用`-sectionIndexTitles`方法返回索引数组
 - (NSArray<NSString *> *)sectionIndexTitlesForTableView:(UITableView *)tableView{
 
-    return [self.collection sectionIndexTitles];
+    NSMutableArray * array = [NSMutableArray arrayWithArray:[self.collection sectionIndexTitles]];
+//    [array insertObject:UITableViewIndexSearch atIndex:0];
+    return array;
 }
 
 // 提供一个NSInteger类型的值，当点击返回当用户触摸到某个索引标题时列表应该跳至的区域的索引，比如B-1
