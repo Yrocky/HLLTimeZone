@@ -39,7 +39,7 @@ static NSMutableArray * allTimeZones = nil;
     return _instance;
 }
 
-#pragma amrk - publice
+#pragma mark - publice
 
 - (NSArray <HLLRegion *>*)knownRegions{
     
